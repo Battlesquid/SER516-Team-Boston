@@ -1,9 +1,6 @@
 name: create release jar
 
-on:
-  push:
-    tags:
-      - '*.*.*'
+on: push
 
 jobs:
   build_and_deploy:
