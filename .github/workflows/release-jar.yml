@@ -1,4 +1,4 @@
-name: create release jar
+name: Create Release JAR
 
 on: push
 
@@ -14,10 +14,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build with Maven 
+    - name: Build client
       run: mvn -pl client -am clean package -DskipTests
 
-    - name: Upload fat Jar to GitHub Releases
+    - name: Create release with JAR asset
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
       with:
